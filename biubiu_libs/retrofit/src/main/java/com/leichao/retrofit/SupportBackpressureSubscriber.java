@@ -3,7 +3,7 @@ package com.leichao.retrofit;
 import rx.Subscriber;
 
 /**
- * Rx背压
+ * Rx背压订阅者
  * Created by leichao on 2017/7/22.
  */
 
