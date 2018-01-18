@@ -1,0 +1,31 @@
+ext {
+    config_dir = rootProject.rootDir.absolutePath + "/gradle_config/"
+    config = [
+            appconfig    : config_dir + "appconfig.gradle",
+            libconfig    : config_dir + "libconfig.gradle",
+            dependencies : config_dir + "dependencies.gradle",
+            keystore     : config_dir + "mula.keystore",
+    ]
+}
+apply from: rootProject.ext.config.dependencies
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

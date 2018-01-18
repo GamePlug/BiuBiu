@@ -1,0 +1,2 @@
+include 'biubiu_apps:app'
+include 'biubiu_libs:dependencies', ':biubiu_libs:mqtt', ':biubiu_libs:retrofit'

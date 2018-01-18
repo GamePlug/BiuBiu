@@ -1,0 +1,6 @@
+apply from: rootProject.ext.config.appconfig
+
+dependencies {
+    implementation project(':biubiu_libs:mqtt')
+    implementation project(':biubiu_libs:retrofit')
+}
