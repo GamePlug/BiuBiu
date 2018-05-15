@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         SecurityClientMobile mobile = new SecurityClientMobile();
         textView.setText("aaaaaaa");
+        textView.setText("Kotlin:" + TestKotlinKt.getA());
     }
 
     @Override

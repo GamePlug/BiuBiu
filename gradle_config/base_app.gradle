@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -72,4 +73,7 @@ dependencies {
     // butterknife
     implementation rootProject.ext.dependencies.butterknife
     annotationProcessor rootProject.ext.dependencies.butterknife_compiler
+
+    // kotlin
+    implementation rootProject.ext.dependencies.kotlin
 }

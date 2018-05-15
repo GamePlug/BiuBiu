@@ -9,7 +9,8 @@ ext {
     ]
 
     dependVersion = [
-            support: '26.1.0'
+            support: '27.0.2',
+            kotlin_version: '1.2.41',
     ]
 
     dependencies = [
@@ -41,6 +42,9 @@ ext {
             // butterknife
             butterknife               : 'com.jakewharton:butterknife:8.4.0',
             butterknife_compiler      : 'com.jakewharton:butterknife-compiler:8.4.0',
+
+            // kotlin
+            kotlin                    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${dependVersion.kotlin_version}",
     ]
 
 }
