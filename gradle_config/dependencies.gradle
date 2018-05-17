@@ -1,18 +1,4 @@
 ext {
-
-    android = [
-            compileSdkVersion         : 26,
-            minSdkVersion             : 14,
-            targetSdkVersion          : 26,
-            versionCode               : 1,
-            versionName               : '1.0.0',
-    ]
-
-    dependVersion = [
-            support: '27.0.2',
-            kotlin_version: '1.2.41',
-    ]
-
     dependencies = [
             // test
             testInstrumentationRunner : 'android.support.test.runner.AndroidJUnitRunner',
@@ -20,8 +6,11 @@ ext {
             test_runner               : 'com.android.support.test:runner:1.0.1',
             test_espresso             : 'com.android.support.test.espresso:espresso-core:3.0.1',
 
+            // kotlin
+            kotlin                    : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${rootProject.ext.versions.kotlinVersion}",
+
             // support
-            appcompatV7               : "com.android.support:appcompat-v7:${dependVersion.support}",
+            appcompatV7               : "com.android.support:appcompat-v7:${rootProject.ext.versions.supportVersion}",
 
             // multidex
             multidex                  : 'com.android.support:multidex:1.0.1',
@@ -42,9 +31,5 @@ ext {
             // butterknife
             butterknife               : 'com.jakewharton:butterknife:8.4.0',
             butterknife_compiler      : 'com.jakewharton:butterknife-compiler:8.4.0',
-
-            // kotlin
-            kotlin                    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${dependVersion.kotlin_version}",
     ]
-
 }

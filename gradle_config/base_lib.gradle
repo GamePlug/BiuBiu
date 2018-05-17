@@ -1,14 +1,15 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        versionCode rootProject.ext.versions.versionCode
+        versionName rootProject.ext.versions.versionName
 
         testInstrumentationRunner rootProject.ext.dependencies.testInstrumentationRunner
         multiDexEnabled true
@@ -28,6 +29,9 @@ dependencies {
     testImplementation rootProject.ext.dependencies.junit
     androidTestImplementation rootProject.ext.dependencies.test_runner
     androidTestImplementation rootProject.ext.dependencies.test_espresso
+
+    // kotlin
+    implementation rootProject.ext.dependencies.kotlin
 
     // support
     implementation rootProject.ext.dependencies.appcompatV7
@@ -51,7 +55,4 @@ dependencies {
     // butterknife
     implementation rootProject.ext.dependencies.butterknife
     annotationProcessor rootProject.ext.dependencies.butterknife_compiler
-
-    // kotlin
-    implementation rootProject.ext.dependencies.kotlin
 }

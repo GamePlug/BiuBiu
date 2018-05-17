@@ -1,22 +1,32 @@
-ext {
-    config_dir = rootProject.rootDir.absolutePath + "/gradle_config/"
-    config = [
-            base_app    : config_dir + "base_app.gradle",
-            base_lib    : config_dir + "base_lib.gradle",
-            dependencies : config_dir + "dependencies.gradle",
-            keystore     : config_dir + "mula.keystore",
-    ]
-}
-apply from: rootProject.ext.config.dependencies
+apply from: rootProject.ext.configs.dependencies
 
 buildscript {
+    ext {
+        config_dir = rootProject.rootDir.absolutePath + "/gradle_config/"
+        configs = [
+                base_app     : config_dir + "base_app.gradle",
+                base_lib     : config_dir + "base_lib.gradle",
+                dependencies : config_dir + "dependencies.gradle",
+                keystore     : config_dir + "mula.keystore",
+        ]
+        versions = [
+                compileSdkVersion   : 26,
+                minSdkVersion       : 14,
+                targetSdkVersion    : 26,
+                versionCode         : 1,
+                versionName         : '1.0.0',
+                supportVersion      : '27.0.2',
+                kotlinVersion       : '1.2.41',
+        ]
+    }
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.41"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${rootProject.ext.versions.kotlinVersion}"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:${rootProject.ext.versions.kotlinVersion}"
     }
 }
 
